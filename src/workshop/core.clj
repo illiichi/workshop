@@ -20,7 +20,7 @@
 ;; We can manipulate the amplitude of the generated sound with multiplication.
 ;; `sin-osc` generates sine waves with a value range of -1 to 1.
 ;; If we decrease the amplitude, the volume of sound also decreases.
-(demo 2 (* 1/2 (sin-osc 440)))
+(demo (* 1/2 (sin-osc 440)))
 
 ;; CAVEAT:
 ;; Waves arithmetic is only available within the `demo` macro defined by Overtone.
@@ -129,8 +129,8 @@
 ;; We can use the third argument to `envelope` to specify the shape of segments constituting the
 ;; envelope:
 ;;   - 0 means linear,
-;;   - a positive number means concave down,
-;;   - a negative number means concave up.
+;;   - a positive number means concave upward,
+;;   - a negative number means concave downward.
 ;;   - also greater the absolute value, more the segment curves.
 (safe-demo 2 (let [freq 880
                    amp (env-gen (envelope [0 1 0] [0.01 0.5] [0 -4]))]
