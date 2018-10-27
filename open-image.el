@@ -1,6 +1,6 @@
 (defun open-image--detect-file-path ()
   (save-excursion
-    (lispy-beginning-of-defun)
+    (beginning-of-defun)
     (re-search-forward "(comment (image ")
     (thing-at-point 'sexp t)))
 
