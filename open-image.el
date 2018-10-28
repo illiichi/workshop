@@ -37,3 +37,7 @@
     (when (get-buffer buf)
       (with-current-buffer buf
         (setq-local face-remapping-alist '((default (:height 2.0))))))))
+
+
+(require 'cider-eval-sexp-fu)
+(setq eval-sexp-fu-flash-duration 0.4)
