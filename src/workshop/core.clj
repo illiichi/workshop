@@ -263,7 +263,10 @@
 
 (comment
   ;; if SuperCollider (SC) is running, you can connect to it instead of using (use 'overtone.live).
-  ;; You can see the resulted wave by executing `s.scope` in SuperCollider's IDE,
+  ;; You need to execute `s.option.maxLogins = 2` before you launch SC server.
+  ;; (Ctrl/CMD + Enter to execute in SC's IDE)
+  ;;
+  ;; You can see the resulted wave by executing `s.scope`,
   ;; or frequency by executing `s.freqscope`.
   (use 'overtone.core)
   (connect-external-server "localhost" 57110))
