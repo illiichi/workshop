@@ -87,7 +87,7 @@
 
 ;; Clip signal. The output will be:
 ;;   1 if it's greater than  1
-;;  -1 if it's greater than -1
+;;  -1 if it's less than    -1
 (demo 2 (->                   ; be careful that here is a '->' not a '->>'
          (* 2 (sin-osc 440))  ; this expression is valued from -2 to 2
          (clip:ar -1 1)))     ; clip over 1 or under -1
