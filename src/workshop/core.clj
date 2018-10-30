@@ -48,7 +48,7 @@
 ;;
 ;; You can increase the degree of vibration, as well as make it vibrates more rapidly by tweaking
 ;; the parameters.
-(demo 2 (sin-osc (+ 440 (* 2 (sin-osc 1)))))
+(demo 2 (sin-osc (+ 440 (* 8 (sin-osc 1)))))
 
 ;; you can use local variable when convenient
 (demo 2 (let [freq (+ 440 (* 220 (sin-osc 0.2)))]
