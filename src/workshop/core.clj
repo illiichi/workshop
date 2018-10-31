@@ -229,11 +229,11 @@
                ; the first argument to this lambda sets the frequency
                ; and the second argument sets the phase
                #(* 4 (sin-osc %1)
-                   (env-gen (envelope [0 1 0] [0.01 2] -4)
+                   (env-gen (envelope [0 1 0] [0.01 0.5] -4)
                             (impulse 1/2 %2)))
 
-                   (iterate #(* 1.5 %) 400) ; a sequence of frequencies
-                   (->> (range 0 1 1/10)    ; and a sequence of phases
+               (iterate #(* 1.5 %) 400) ; a sequence of frequencies
+               (->> (range 0 1 1/10)    ; and a sequence of phases
                         (rotate 1)
                         reverse))))
 
@@ -249,7 +249,8 @@
 ;; some code examples to create complex sounds
 (shuffle (range 100 1000 100))
 
-(take 8 (iterate #(* 1.1 %) 100))       ; don't forget `take`.
+(take 16 (interleave (iterate #(* 1.5 %) 400)
+                    (iterate #(* 9/5 %) 300)))       ; don't forget `take`.
 
 (->> (reductions * 1000 (cycle [5/4 7/3 11/10 3/5 4/7]))
      (take 20))
